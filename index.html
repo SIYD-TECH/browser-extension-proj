@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/e685d0a80e.js" crossorigin="anonymous"></script>
+
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+  </style>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+</script>
+
+</head>
+<body class="bg-blue-50 px-4 min-h-screen sm:px-10 md:px-30 dark:bg-gradient-to-b dark:from-black dark:via-black dark:to-blue-950 dark:bg-no-repeat">
+
+  <nav class="bg-white shadow-md mt-5 rounded-xl mb-10 dark:bg-slate-800">
+    <div class="flex justify-between items-center px-5 py-2">
+      <div>
+         <img src="./assets/images/logo.svg" alt="logo" class="logo">
+      </div>
+      <div class="bg-gray-200 p-2 rounded-xl dark:bg-slate-700">
+        <img src="./assets/images/icon-moon.svg" alt="moon icon" class="dark">
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="flex flex-col md:flex-row md:align-center md:justify-between">
+      <div class="flex flex-col items-center gap-0 md:flex-row md:gap-3">
+        <h2 class="text-[2rem] font-bold text-center dark:text-white">Extensions List</h2>
+        <p class="extensions-count mb-5 md:mb-0">(12 Extensions)</p>
+      </div>
+      <ul class="flex justify-center gap-5 text-[1.2rem] max-h-[40px]">
+        <li class="px-4 py-1 rounded-2xl bg-red-800 nav cursor-pointer text-white dark:text-black dark" data-filter="all">All</li>
+        <li class="px-4 py-1 rounded-2xl bg-white nav cursor-pointer dark:bg-slate-700" data-filter="active">Active</li>
+        <li class=" px-4 py-1 rounded-2xl bg-white nav cursor-pointer dark:bg-slate-700" data-filter="inactive">Inactive</li>
+      </ul>
+    </div>
+
+    <section class="flex flex-col gap-5 my-10 sm:grid grid-cols-2 md:grid md:grid-cols-3 md:gap-7">
+      <div class="flex flex-col bg-white p-5 rounded-[20px] shadow-md blocks active dark:bg-gray-800">
+        <div class="flex gap-5">
+          <div class="w-1/2">
+           <img src="./assets/images/logo-devlens.svg" alt="logo">
+          </div>
+          <div>
+            <h1 class="text-[1.3rem] font-bold dark:text-white">DevLens</h1>
+            <p class="text-gray-500 text-[0.95rem] dark:text-white">Quickly inspect page layouts and visualize element boundaries.</p>
+          </div>
+        </div>
+        <div class=" flex mt-5 items-center justify-between">
+          <button class="border border-gray-400 py-1 px-3 rounded-full dark:text-white">Remove</button>
+          <label class="relative inline-flex items-center cursor-pointer contain">
+               <!-- <input type="checkbox" class="sr-only-peer"> -->
+               <div class="w-11 h-6 bg-red-500 bg-gray-300 rounded-full transition-colors toggbg">
+               </div>
+               <div class="w-4 h-4 rounded-full bg-white absolute top-1 right-1 transition-transform toggBtn">
+               </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="flex flex-col bg-white p-5 rounded-[20px] shadow-md blocks active dark:bg-gray-800">
+        <div class="flex gap-5">
+          <div class="w-1/2">
+           <img src="./assets/images/logo-style-spy.svg" alt="logo">
+          </div>
+          <div>
+            <h1 class="text-[1.3rem] font-bold dark:text-white">StyleSpy</h1>
+            <p class= "text-gray-500 text-[0.95rem] dark:text-white">Quickly inspect page layouts and visualize element boundaries.</p>
+          </div>
+        </div>
+        <div class=" flex mt-5 items-center justify-between">
+          <button class="border border-gray-400 py-1 px-3 rounded-full dark:text-white">Remove</button>
+          <label class="relative inline-flex items-center cursor-pointer contain">
+               <!-- <input type="checkbox" class="sr-only-peer"> -->
+               <div class="w-11 h-6 bg-red-500 bg-gray-300 rounded-full transition-colors toggbg">
+               </div>
+               <div class="w-4 h-4 rounded-full bg-white absolute top-1 right-1 transition-transform toggBtn" data-status="active">
+               </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="flex flex-col bg-white p-5 rounded-[20px] shadow-md blocks active dark:bg-gray-800">
+        <div class="flex gap-5">
+          <div class="w-1/2">
+           <img src="./assets/images/logo-speed-boost.svg" alt="logo">
+          </div>
+          <div>
+            <h1 class="text-[1.3rem] font-bold dark:text-white"> SpeedBoost</h1>
+            <p class="text-gray-500 text-[0.95rem] dark:text-white">Optimizes browser resource usage to accelerate page loading.</p>
+          </div>
+        </div>
+        <div class=" flex mt-5 items-center justify-between">
+          <button class="border border-gray-400 py-1 px-3 rounded-full dark:text-white">Remove</button>
+          <label class="relative inline-flex items-center cursor-pointer contain">
+               <!-- <input type="checkbox" class="sr-only-peer"> -->
+               <div class="w-11 h-6 bg-red-500 bg-gray-300 rounded-full transition-colors toggbg">
+               </div>
+               <div class="w-4 h-4 rounded-full bg-white absolute top-1 right-1 transition-transform toggBtn" data-status="active">
+               </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="flex flex-col bg-white p-5 rounded-[20px] shadow-md blocks active dark:bg-gray-800">
+        <div class="flex gap-5">
+          <div class="w-1/2">
+           <img src="./assets/images/logo-json-wizard.svg" alt="logo">
+          </div>
+          <div>
+            <h1 class="text-[1.3rem] font-bold dark:text-white">JSONWizard</h1>
+            <p class= "text-gray-500 text-[0.95rem] dark:text-white">Formats, validates, and prettifies JSON responses in-browser.</p>
+          </div>
+          
+        </div>
+        <div class=" flex mt-5 items-center justify-between">
+          <button class="border border-gray-400 py-1 px-3 rounded-full dark:text-white">Remove</button>
+          <label class="relative inline-flex items-center cursor-pointer contain">
+               <!-- <input type="checkbox" class="sr-only-peer"> -->
+               <div class="w-11 h-6 bg-red-500 bg-gray-300 rounded-full transition-colors toggbg">
+               </div>
+               <div class="w-4 h-4 rounded-full bg-white absolute top-1 right-1 transition-transform toggBtn" data-status="active">
+               </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="flex flex-col bg-white p-5 rounded-[20px] shadow-md blocks active dark:bg-gray-800">
+        <div class="flex gap-5">
+          <div class="w-1/2">
+           <img src="./assets/images/logo-tab-master-pro.svg" alt="logo">
+          </div>
+          <div>
+            <h1 class="text-[1.3rem] font-bold dark:text-white">TabMaster Pro</h1>
+            <p class= "text-gray-500 text-[0.95rem] dark:text-white">Organizes browser tabs into groups and sessions</p>
+          </div>
+          
+        </div>
+        <div class=" flex mt-5 items-center justify-between">
+          <button class="border border-gray-400 py-1 px-3 rounded-full dark:text-white">Remove</button>
+          <label class="relative inline-flex items-center cursor-pointer contain">
+               <!-- <input type="checkbox" class="sr-only-peer"> -->
+               <div class="w-11 h-6 bg-red-500 bg-gray-300 rounded-full transition-colors toggbg">
+               </div>
+               <div class="w-4 h-4 rounded-full bg-white absolute top-1 right-1 transition-transform toggBtn" data-status="active">
+               </div>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="flex flex-col bg-white p-5 rounded-[20px] shadow-md blocks active dark:bg-gray-800">
+        <div class="flex gap-5">
+          <div class="w-1/2">
+           <img src="./assets/images/logo-viewport-buddy.svg" alt="logo">
+          </div>
+          <div>
+            <h1 class="text-[1.3rem] font-bold dark:text-white">ViewportBuddy</h1>
+            <p class= "text-gray-500 text-[0.95rem] dark:text-white">Simulates various screen resolutions directly within the browser</p>
+          </div>
+        </div>
+        <div class=" flex mt-5 items-center justify-between">
+          <button class="border border-gray-400 py-1 px-3 rounded-full dark:text-white">Remove</button>
+          <label class="relative inline-flex items-center cursor-pointer contain">
+               <!-- <input type="checkbox" class="sr-only-peer"> -->
+               <div class="w-11 h-6 bg-red-500 bg-gray-300 rounded-full transition-colors toggbg">
+               </div>
+               <div class="w-4 h-4 rounded-full bg-white absolute top-1 right-1 transition-transform toggBtn" data-status="active">
+               </div>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="flex flex-col bg-white p-5 rounded-[20px] shadow-md blocks active dark:bg-gray-800">
+        <div class="flex gap-5">
+          <div class="w-1/2">
+           <img src="./assets/images/logo-markup-notes.svg" alt="logo">
+          </div>
+          <div>
+            <h1 class="text-[1.3rem] font-bold dark:text-white">Markup Notes</h1>
+            <p class= "text-gray-500 text-[0.95rem] dark:text-white">Enables annotation and notes directly onto webpages for collaborative debugging</p>
+          </div>
+        </div>
+        <div class=" flex mt-5 items-center justify-between">
+          <button class="border border-gray-400 py-1 px-3 rounded-full dark:text-white">Remove</button>
+          <label class="relative inline-flex items-center cursor-pointer contain">
+               <!-- <input type="checkbox" class="sr-only-peer"> -->
+               <div class="w-11 h-6 bg-red-500 bg-gray-300 rounded-full transition-colors toggbg">
+               </div>
+               <div class="w-4 h-4 rounded-full bg-white absolute top-1 right-1 transition-transform toggBtn" data-status="active">
+               </div>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="flex flex-col bg-white p-5 rounded-[20px] shadow-md blocks active dark:bg-gray-800">
+        <div class="flex gap-5">
+          <div class="w-1/2">
+           <img src="./assets/images/logo-grid-guides.svg" alt="logo">
+          </div>
+          <div>
+            <h1 class="text-[1.3rem] font-bold dark:text-white">GridGuides</h1>
+            <p class= "text-gray-500 text-[0.95rem] dark:text-white">Overlay customizable grids and alignment guides on any webpage.</p>
+          </div>
+        </div>
+        <div class=" flex mt-5 items-center justify-between">
+          <button class="border border-gray-400 py-1 px-3 rounded-full dark:text-white">Remove</button>
+          <label class="relative inline-flex items-center cursor-pointer contain">
+               <!-- <input type="checkbox" class="sr-only-peer"> -->
+               <div class="w-11 h-6 bg-red-500 bg-gray-300 rounded-full transition-colors toggbg">
+               </div>
+               <div class="w-4 h-4 rounded-full bg-white absolute top-1 right-1 transition-transform toggBtn" data-status="active">
+               </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="flex flex-col bg-white p-5 rounded-[20px] shadow-md blocks active dark:bg-gray-800">
+        <div class="flex gap-5">
+          <div class="w-1/2">
+           <img src="./assets/images/logo-palette-picker.svg" alt="logo">
+          </div>
+          <div>
+            <h1 class="text-[1.3rem] font-bold dark:text-white">Pallete Picker</h1>
+            <p class= "text-gray-500 text-[0.95rem] dark:text-white">Instantly extracts color palettes from any webpage.</p>
+          </div>
+        </div>
+        <div class=" flex mt-5 items-center justify-between">
+          <button class="border border-gray-400 py-1 px-3 rounded-full dark:text-white">Remove</button>
+          <label class="relative inline-flex items-center cursor-pointer contain">
+               <!-- <input type="checkbox" class="sr-only-peer"> -->
+               <div class="w-11 h-6 bg-red-500 bg-gray-300 rounded-full transition-colors toggbg">
+               </div>
+               <div class="w-4 h-4 rounded-full bg-white absolute top-1 right-1 transition-transform toggBtn" data-status="active">
+               </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="flex flex-col bg-white p-5 rounded-[20px] shadow-md blocks active dark:bg-gray-800">
+        <div class="flex gap-5">
+          <div class="w-1/2">
+           <img src="./assets/images/logo-link-checker.svg" alt="logo">
+          </div>
+          <div>
+            <h1 class="text-[1.3rem] font-bold dark:text-white">LinkChecker</h1>
+            <p class= "text-gray-500 text-[0.95rem] dark:text-white">Scans and highlights broken links on any page</p>
+          </div>
+        </div>
+        <div class=" flex mt-5 items-center justify-between">
+          <button class="border border-gray-400 py-1 px-3 rounded-full dark:text-white">Remove</button>
+          <label class="relative inline-flex items-center cursor-pointer contain">
+               <!-- <input type="checkbox" class="sr-only-peer"> -->
+               <div class="w-11 h-6 bg-red-500 bg-gray-300 rounded-full transition-colors toggbg">
+               </div>
+               <div class="w-4 h-4 rounded-full bg-white absolute top-1 right-1 transition-transform toggBtn" data-status="active">
+               </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="flex flex-col bg-white p-5 rounded-[20px] shadow-md blocks active dark:bg-gray-800">
+        <div class="flex gap-5">
+          <div class="w-1/2">
+           <img src="./assets/images/logo-dom-snapshot.svg" alt="logo">
+          </div>
+          <div>
+            <h1 class="text-[1.3rem] font-bold dark:text-white">DOM Snapshot</h1>
+            <p class= "text-gray-500 text-[0.95rem] dark:text-white">Capture and export DOM structures quickly</p>
+          </div>
+        </div>
+        <div class=" flex mt-5 items-center justify-between">
+          <button class="border border-gray-400 py-1 px-3 rounded-full dark:text-white">Remove</button>
+          <label class="relative inline-flex items-center cursor-pointer contain">
+               <!-- <input type="checkbox" class="sr-only-peer"> -->
+               <div class="w-11 h-6 bg-red-500 bg-gray-300 rounded-full transition-colors toggbg">
+               </div>
+               <div class="w-4 h-4 rounded-full bg-white absolute top-1 right-1 transition-transform toggBtn" data-status="active">
+               </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="flex flex-col bg-white p-5 rounded-[20px] shadow-md blocks active dark:bg-gray-800">
+        <div class="flex gap-5">
+          <div class="w-1/2">
+            <img src="./assets/images/logo-console-plus.svg" alt="logo">
+          </div>
+          <div>
+            <h1 class="text-[1.3rem] font-bold dark:text-white">ConsolePlus</h1>
+            <p class= "text-gray-500 text-[0.95rem] dark:text-white">Enhanced developer console with addvanced filtering and logging</p>
+          </div>
+        </div>
+        <div class=" flex mt-5 items-center justify-between">
+          <button class="border border-gray-400 py-1 px-3 rounded-full dark:text-white">Remove</button>
+          <label class="relative inline-flex items-center cursor-pointer contain">
+               <!-- <input type="checkbox" class="sr-only-peer"> -->
+               <div class="w-11 h-6 bg-red-500 bg-gray-300 rounded-full transition-colors toggbg">
+               </div>
+               <div class="w-4 h-4 rounded-full bg-white absolute top-1 right-1 transition-transform toggBtn" data-status="active">
+               </div>
+          </label>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script src="./index.js">
+
+  </script>
+</body>
+</html>
